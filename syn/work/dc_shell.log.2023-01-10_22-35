@@ -1,0 +1,45 @@
+setting auto_restore_mw_cel_lib_setup true
+dc_shell> source ../scripts/dc-simple_adder.tcl
+== ANALYZE autoread all files ==
+
+Starting ANALYZE autoread mode...
+Warning: Defining design library 'WORK' at directory '/home/reethika/common/Documents/lab1-reethika07-master/syn/work/WORK_autoread'. (AUTOREAD-107)
+Information: Adding '/home/reethika/common/Documents/lab1-reethika07-master/syn/rtl/simple_adder.sv'.  (AUTOREAD-100)
+Information: Scanning file { simple_adder.sv }. (AUTOREAD-303)
+Compiling source file /home/reethika/common/Documents/lab1-reethika07-master/syn/rtl/simple_adder.sv
+Presto compilation completed successfully.
+Autoread command completed successfully.
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/dw_foundation.sldb'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/gtech.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/standard.sldb'
+  Loading link library 'saed32rvt_ss0p95v125c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (simple_adder)
+Elaborated 1 design.
+Current design is now 'simple_adder'.
+Information: Building the design 'dff'. (HDL-193)
+
+Inferred memory devices in process
+        in routine dff line 73 in file
+                '/home/reethika/common/Documents/lab1-reethika07-master/syn/rtl/simple_adder.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        q_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (dff)
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+create_clock -name "CLK" -period 0.500 -waveform {0.0 0.250} clock
+1
+set_clock_transition 0.100 CLK
+1
+set_input_delay 0.25 [ get_ports {a b cin } ] -clock [ get_clock CLK ]
+1
+set_output_delay 0.25 [get_ports {sum cout} ] -clock [ get_clock  CLK ]
+1
+Current design is 'simple_adder'.
+Information: Uniquified 5 instances of design 'dff'. (OPT-1056)
+Information: Performing power optimization. (PWR-850)
+Analyzing: "/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db"
