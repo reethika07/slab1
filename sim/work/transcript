@@ -1,0 +1,111 @@
+# //  Questa Sim-64
+# //  Version 10.6b linux_x86_64 May 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim -debugDB top -do "add wave sim:/top/* ; run -all" 
+# Start time: 19:59:03 on Jan 16,2023
+# ** Warning: (vsim-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(13): (vopt-2685) [TFMPC] - Too few port connections for 'q_reg'.  Expected 7, found 6.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(13): (vopt-2718) [TFMPC] - Missing connection for port 'QN'.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(53): (vopt-2685) [TFMPC] - Too few port connections for 'q_reg'.  Expected 7, found 6.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(53): (vopt-2718) [TFMPC] - Missing connection for port 'QN'.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(43): (vopt-2685) [TFMPC] - Too few port connections for 'q_reg'.  Expected 7, found 6.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(43): (vopt-2718) [TFMPC] - Missing connection for port 'QN'.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(33): (vopt-2685) [TFMPC] - Too few port connections for 'q_reg'.  Expected 7, found 6.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(33): (vopt-2718) [TFMPC] - Missing connection for port 'QN'.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(23): (vopt-2685) [TFMPC] - Too few port connections for 'q_reg'.  Expected 7, found 6.
+# ** Warning: ../../syn/outputs/simple_adder.dc.vg(23): (vopt-2718) [TFMPC] - Missing connection for port 'QN'.
+# Loading work.top(fast)
+# Loading work.simple_adder(fast)
+# Loading work.dff_4(fast)
+# Loading work.SDFFARX1_RVT(fast)
+# Loading work.INVX0_RVT(fast)
+# Loading work.dff_3(fast)
+# Loading work.dff_2(fast)
+# Loading work.dff_1(fast)
+# Loading work.dff_0(fast)
+# Loading work.FADDX1_RVT(fast)
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# add wave sim:/top/* 
+#  run -all
+# t=  0 a=x,b=x,cin=x,reset=x,sum=x,cout=x 
+# 
+# t=  4 a=0,b=0,cin=0,reset=1,sum=x,cout=x 
+# 
+# t=  4 a=0,b=0,cin=0,reset=1,sum=0,cout=0 
+# 
+# t= 12 a=0,b=0,cin=0,reset=0,sum=0,cout=0 
+# 
+# t= 20 a=0,b=0,cin=1,reset=0,sum=0,cout=0 
+# 
+# t= 32 a=0,b=1,cin=0,reset=0,sum=0,cout=0 
+# 
+# t= 35 a=0,b=1,cin=0,reset=0,sum=1,cout=0 
+# 
+# t= 44 a=0,b=1,cin=1,reset=0,sum=1,cout=0 
+# 
+# t= 55 a=0,b=1,cin=1,reset=0,sum=1,cout=1 
+# 
+# t= 55 a=0,b=1,cin=1,reset=0,sum=0,cout=1 
+# 
+# t= 56 a=0,b=0,cin=0,reset=0,sum=0,cout=1 
+# 
+# t= 75 a=0,b=0,cin=0,reset=0,sum=0,cout=0 
+# 
+# t= 84 a=1,b=0,cin=0,reset=0,sum=0,cout=0 
+# 
+# t= 95 a=1,b=0,cin=0,reset=0,sum=1,cout=0 
+# 
+# t= 96 a=1,b=0,cin=1,reset=0,sum=1,cout=0 
+# 
+# t=108 a=1,b=1,cin=0,reset=0,sum=1,cout=0 
+# 
+# t=115 a=1,b=1,cin=0,reset=0,sum=1,cout=1 
+# 
+# t=115 a=1,b=1,cin=0,reset=0,sum=0,cout=1 
+# 
+# t=120 a=1,b=1,cin=1,reset=0,sum=0,cout=1 
+# 
+# t=132 a=0,b=0,cin=0,reset=0,sum=0,cout=1 
+# 
+# t=135 a=0,b=0,cin=0,reset=0,sum=1,cout=1 
+# 
+# t=144 a=1,b=1,cin=1,reset=1,sum=1,cout=1 
+# 
+# t=144 a=1,b=1,cin=1,reset=1,sum=0,cout=0 
+# 
+# ** Note: $stop    : ../rtl/simple_adder_tb.v(65)
+#    Time: 172 ns  Iteration: 0  Instance: /top
+# Break in Module top at ../rtl/simple_adder_tb.v line 65
+find drivers -source -time {171250 ps} -cause sim:/top/clock
+# Multiple active drivers exist at time 170 ns for signal sim:/top/clock:
+#    PROCESS: #ALWAYS#11     SIGNAL: /top/clock  FILE: ../rtl/simple_adder_tb.v:11
+#    PROCESS: #INITIAL#5,69  SIGNAL:             FILE: ../rtl/simple_adder_tb.v:5
+# 
+# ==============================================================
+# *PARTIAL* causality trace results for signal "sim:/top/clock":
+# 
+#   Time | Type | Scope | Signal | Source File
+# ------ | ---- | ----- | ------ | --------------------------------------------------------------------------------
+# 170 ns | Gate | /top  | clock  | ../rtl/simple_adder_tb.v:11
+find drivers -source -time {168041 ps} -cause sim:/top/sum
+# 
+# ============================================================
+# *PARTIAL* causality trace results for signal "sim:/top/sum":
+# 
+#      Time | Type | Scope                    | Signal | Source File
+# --------- | ---- | ------------------------ | ------ | --------------------------------------------------------------------------------
+# 144073 ps | PRIM | /top/adder/dff_sum/q_reg |        | /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/verilog/saed32nm.v:15604
