@@ -1,0 +1,124 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : qor
+Design : fifo1_sram
+Version: Q-2019.12-SP3
+Date   : Sat Apr  8 19:03:35 2023
+****************************************
+
+
+  Timing Path Group 'INPUTS'
+  -----------------------------------
+  Levels of Logic:               8.00
+  Critical Path Length:          1.10
+  Critical Path Slack:          -0.15
+  Critical Path Clk Period:      1.18
+  Total Negative Slack:         -1.13
+  No. of Violating Paths:       10.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'OUTPUTS'
+  -----------------------------------
+  Levels of Logic:               2.00
+  Critical Path Length:          1.75
+  Critical Path Slack:          -0.10
+  Critical Path Clk Period:      1.22
+  Total Negative Slack:         -0.86
+  No. of Violating Paths:       10.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'rclk'
+  -----------------------------------
+  Levels of Logic:               8.00
+  Critical Path Length:          1.02
+  Critical Path Slack:          -0.02
+  Critical Path Clk Period:      1.22
+  Total Negative Slack:         -0.02
+  No. of Violating Paths:        1.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'wclk'
+  -----------------------------------
+  Levels of Logic:               9.00
+  Critical Path Length:          1.09
+  Critical Path Slack:          -0.13
+  Critical Path Clk Period:      1.18
+  Total Negative Slack:         -0.13
+  No. of Violating Paths:        1.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          5
+  Hierarchical Port Count:        160
+  Leaf Cell Count:                359
+  Buf/Inv Cell Count:              36
+  Buf Cell Count:                   4
+  Inv Cell Count:                  32
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:       255
+  Sequential Cell Count:          104
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:   180556.321227
+  Noncombinational Area:
+                        120833.592340
+  Buf/Inv Area:             60.994561
+  Total Buffer Area:             8.13
+  Total Inverter Area:          52.86
+  Macro/Black Box Area:  69436.171875
+  Net Area:               1017.626006
+  -----------------------------------
+  Cell Area:            370826.085442
+  Design Area:          371843.711448
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:           509
+  Nets With Violations:            10
+  Max Trans Violations:            10
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: auto.ece.pdx.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.04
+  Logic Optimization:                  3.20
+  Mapping Optimization:              176.37
+  -----------------------------------------
+  Overall Compile Time:              204.40
+  Overall Compile Wall Clock Time:   205.72
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.15  TNS: 1.98  Number of Violating Paths: 20
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

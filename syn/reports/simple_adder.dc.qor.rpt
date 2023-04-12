@@ -4,7 +4,7 @@ Information: Updating design information... (UID-85)
 Report : qor
 Design : simple_adder
 Version: Q-2019.12-SP3
-Date   : Sat Jan 14 20:14:03 2023
+Date   : Sun Jan 15 14:08:55 2023
 ****************************************
 
 
@@ -65,10 +65,10 @@ Date   : Sat Jan 14 20:14:03 2023
   Compile CPU Statistics
   -----------------------------------------
   Resource Sharing:                    0.00
-  Logic Optimization:                  0.04
-  Mapping Optimization:                0.25
+  Logic Optimization:                  0.03
+  Mapping Optimization:                0.26
   -----------------------------------------
-  Overall Compile Time:                4.54
+  Overall Compile Time:                4.49
   Overall Compile Wall Clock Time:     4.93
 
   --------------------------------------------------------------------

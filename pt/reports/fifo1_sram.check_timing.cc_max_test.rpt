@@ -1,0 +1,90 @@
+Information: Checking 'no_input_delay'.
+Information: Checking 'no_driving_cell'.
+Warning: There are 15 ports with parasitics but with no driving cell.
+
+Ports
+------------------------------------------------------------
+rclk
+rinc
+rrst_n
+wclk
+wclk2x
+wdata_in[0]
+wdata_in[1]
+wdata_in[2]
+wdata_in[3]
+wdata_in[4]
+wdata_in[5]
+wdata_in[6]
+wdata_in[7]
+winc
+wrst_n
+
+Information: Checking 'unconstrained_endpoints'.
+Warning: There are 52 endpoints which are not constrained for maximum delay.
+
+Endpoint
+--------------------------------------------------------------------------------
+wdata_reg_4_/RSTB
+wptr_full/wbin_reg_6_/RSTB
+sync_r2w/wq2_rptr_reg_8_/RSTB
+sync_r2w/wq1_rptr_reg_10_/RSTB
+sync_r2w/wq2_rptr_reg_7_/RSTB
+wptr_full/wptr_reg_9_/RSTB
+sync_r2w/wq1_rptr_reg_4_/RSTB
+wdata_reg_5_/RSTB
+sync_r2w/wq1_rptr_reg_2_/RSTB
+wptr_full/wfull_reg/RSTB
+sync_r2w/wq2_rptr_reg_2_/RSTB
+wptr_full/wbin_reg_0_/RSTB
+sync_r2w/wq1_rptr_reg_8_/RSTB
+wptr_full/wbin_reg_3_/RSTB
+wptr_full/wptr_reg_0_/RSTB
+wptr_full/wbin_reg_9_/RSTB
+sync_r2w/wq2_rptr_reg_10_/RSTB
+sync_r2w/wq2_rptr_reg_4_/RSTB
+sync_r2w/wq2_rptr_reg_0_/RSTB
+wdata_reg_6_/RSTB
+sync_r2w/wq2_rptr_reg_5_/RSTB
+wptr_full/wbin_reg_10_/RSTB
+wdata_reg_0_/RSTB
+wptr_full/wbin_reg_1_/RSTB
+wptr_full/wptr_reg_2_/RSTB
+sync_r2w/wq2_rptr_reg_3_/RSTB
+wptr_full/wptr_reg_8_/RSTB
+sync_r2w/wq1_rptr_reg_5_/RSTB
+sync_r2w/wq1_rptr_reg_6_/RSTB
+wptr_full/wptr_reg_7_/RSTB
+sync_r2w/wq2_rptr_reg_1_/RSTB
+wptr_full/wbin_reg_5_/RSTB
+sync_r2w/wq1_rptr_reg_7_/RSTB
+wptr_full/wptr_reg_4_/RSTB
+wptr_full/wptr_reg_3_/RSTB
+wdata_reg_3_/RSTB
+wptr_full/wptr_reg_1_/RSTB
+wdata_reg_2_/RSTB
+wptr_full/wptr_reg_6_/RSTB
+wptr_full/wbin_reg_7_/RSTB
+sync_r2w/wq2_rptr_reg_9_/RSTB
+sync_r2w/wq1_rptr_reg_9_/RSTB
+sync_r2w/wq2_rptr_reg_6_/RSTB
+wptr_full/wbin_reg_2_/SETB
+sync_r2w/wq1_rptr_reg_1_/RSTB
+sync_r2w/wq1_rptr_reg_0_/RSTB
+wptr_full/wptr_reg_5_/RSTB
+wdata_reg_7_/SETB
+wptr_full/wbin_reg_8_/RSTB
+wptr_full/wbin_reg_4_/RSTB
+sync_r2w/wq1_rptr_reg_3_/RSTB
+wdata_reg_1_/RSTB
+
+Information: Checking 'unexpandable_clocks'.
+Information: Checking 'latch_fanout'.
+Information: Checking 'no_clock'.
+Information: Checking 'partial_input_delay'.
+Information: Checking 'generic'.
+Information: Checking 'loops'.
+Information: Checking 'generated_clocks'.
+Information: Checking 'pulse_clock_non_pulse_clock_merge'.
+Information: Checking 'pll_configuration'.
+0

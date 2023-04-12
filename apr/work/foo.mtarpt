@@ -1,0 +1,68 @@
+VERSION {1.0}
+PTDEF {instance} {pin} {cell} {edge} {clock_edge} {clock} {phase}
+BANNER
+  {Module} {fifo1_sram}
+  {Timing} {LATE}
+  {Slew Propagation} {WORST}
+  {Operating Condition} {saed32hvt_ss0p75v125c/%NOM_PVT}
+  {PVT Mode} {max}
+  {Tree Type} {worst_case}
+  {Process} {0.990}
+  {Voltage} {0.750}
+  {Temperature} {125.000}
+  {time unit} {1.000 ns}
+  {capacitance unit} {1.000 fF}
+  {resistance unit} {1.000 MOhm}
+  {TOOL} {v19.16-s053_1 ((64bit) 08/31/2020 13:16 (Linux 2.6.32-431.11.2.el6.x86_64))}
+  {DATE} {April 11, 2023}
+END_BANNER
+PATH 1
+  VIEW  func_max_scenario
+  CHECK_TYPE {Late External Delay Assertion}
+  REF {} {}
+  ENDPT {} {rdata[4]} {} {v} {leading} {rclk} {rclk(C)(P)(func_max_scenario)*}
+  BEGINPT {fifomem/genblk1_5__U} {O2[4]} {SRAM2RW128x8} {v} {leading} {rclk} {rclk(D)(P)(func_max_scenario)*}
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {+} {Network Insertion Delay} {0.100}
+    {-} {External Delay} {-0.500}
+    {+} {Phase Shift} {1.220}
+    {+} {CPPR Adjustment} {0.000}
+    {-} {Uncertainty} {0.070}
+    {=} {Required Time} {1.750}
+  END_REQ_CLC
+  SLK_CLC
+    {-} {Arrival Time} {3.115}
+    {=} {Slack Time} {-1.365}
+  END_SLK_CLC
+  SLK -1.365
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {+} {Drive Adjustment} {0.025}
+    {=} {Beginpoint Arrival Time} {0.025}
+  END_ARR_CLC
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {rclk} {^} {} {} {rclk} {} {} {} {0.025} {2505.912} {0.025} {-1.339} {} {1} {(320.00, 36.00) } 
+    NET {} {} {} {} {} {rclk} {} {0.000} {0.000} {0.025} {2505.912} {0.025} {-1.339} {} {} {} 
+    INST {io_b_rclk} {PADIO} {^} {DOUT} {^} {} {I1025_NS} {0.427} {0.000} {0.198} {} {0.453} {-0.912} {} {1} {(320.00, 36.00) (316.55, 299.58)} 
+    NET {} {} {} {} {} {n_4} {} {0.004} {0.000} {0.198} {27.337} {0.456} {-0.909} {} {} {} 
+    INST {CTS_ccl_a_buf_00012} {A} {^} {Y} {^} {} {NBUFFX32_LVT} {0.138} {0.000} {0.084} {} {0.594} {-0.771} {} {52} {(402.60, 483.01) (403.51, 482.40)} 
+    NET {} {} {} {} {} {CTS_1} {} {0.035} {0.000} {0.141} {94.591} {0.629} {-0.736} {} {} {} 
+  END_LAUNCH_CLK_PATH 
+  DATA_PATH 
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location} 
+    INST {fifomem/genblk1_5__U} {CE2} {^} {O2[4]} {v} {} {SRAM2RW128x8} {0.659} {0.119} {0.571} {} {1.288} {-0.077} {} {8} {(455.14, 774.00) (484.33, 756.56)} 
+    NET {} {} {} {} {} {io_l_rdata_4__net} {} {0.134} {0.022} {0.500} {62.915} {1.422} {0.057} {} {} {} 
+    INST {FE_MDBC3_io_l_rdata_4_} {A} {v} {Y} {v} {} {NBUFFX2_LVT} {0.174} {0.000} {0.100} {} {1.596} {0.231} {} {1} {(400.02, 600.05) (399.71, 599.44)} 
+    NET {} {} {} {} {} {FE_MDBN3_} {} {0.000} {0.000} {0.100} {2.174} {1.596} {0.231} {} {} {} 
+    INST {FE_OFC93_FE_MDBN3} {A} {v} {Y} {v} {} {NBUFFX16_LVT} {0.115} {0.000} {0.054} {} {1.711} {0.346} {} {1} {(398.04, 600.05) (397.43, 599.44)} 
+    NET {} {} {} {} {} {FE_OFN65_FE_MDBN3} {} {0.007} {0.000} {0.056} {33.890} {1.718} {0.353} {} {} {} 
+    INST {io_l_rdata_4_} {DIN} {v} {PADIO} {v} {} {D8I1025_NS} {1.397} {0.000} {0.885} {} {3.115} {1.750} {} {2} {(299.58, 649.77) (36.00, 640.06)} 
+    NET {} {} {} {} {} {rdata[4]} {} {0.000} {0.000} {0.885} {1433.807} {3.115} {1.750} {} {} {} 
+  END_DATA_PATH
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+  END_CAP_CLK_PATH
+END_PATH 1
+

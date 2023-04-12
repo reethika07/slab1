@@ -1,0 +1,33 @@
+Information: Checking 'no_input_delay'.
+Information: Checking 'no_driving_cell'.
+Warning: There are 15 ports with parasitics but with no driving cell.
+
+Ports
+------------------------------------------------------------
+rclk
+rinc
+rrst_n
+wclk
+wclk2x
+wdata_in[0]
+wdata_in[1]
+wdata_in[2]
+wdata_in[3]
+wdata_in[4]
+wdata_in[5]
+wdata_in[6]
+wdata_in[7]
+winc
+wrst_n
+
+Information: Checking 'unconstrained_endpoints'.
+Information: Checking 'unexpandable_clocks'.
+Information: Checking 'latch_fanout'.
+Information: Checking 'no_clock'.
+Information: Checking 'partial_input_delay'.
+Information: Checking 'generic'.
+Information: Checking 'loops'.
+Information: Checking 'generated_clocks'.
+Information: Checking 'pulse_clock_non_pulse_clock_merge'.
+Information: Checking 'pll_configuration'.
+0

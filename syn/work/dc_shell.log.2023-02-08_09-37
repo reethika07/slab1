@@ -1,0 +1,15 @@
+setting auto_restore_mw_cel_lib_setup true
+Initializing gui preferences from file  /u/reethika/.synopsys_dv_prefs.tcl
+dc_shell> source ../scripts/dc-factorial.tcl
+Information: script '/home/reethika/common/Documents/lab1-reethika07-master/syn/scripts/dc-factorial.tcl'
+        stopped at line 1 due to EOF. (CMD-081)
+Error: missing close-brace
+        Use error_info for more info. (CMD-013)
+dc_shell> 
+
+Memory usage for this session 54 Mbytes.
+Memory usage for this session including child processes 54 Mbytes.
+CPU usage for this session 2 seconds ( 0.00 hours ).
+Elapsed time for this session 25031 seconds ( 6.95 hours ).
+
+Thank you...

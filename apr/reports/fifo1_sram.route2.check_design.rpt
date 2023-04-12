@@ -1,0 +1,44 @@
+****************************************
+ Report : check_design 
+ Options: { pre_route_stage }
+ Design : fifo1_sram
+ Version: Q-2019.12-SP4
+ Date   : Sat Apr  8 19:44:08 2023
+****************************************
+
+Running mega-check 'pre_route_stage': 
+    Running atomic-check 'design_mismatch'
+    Running atomic-check 'scan_chain'
+    Running atomic-check 'mv_design'
+    Running atomic-check 'design_extraction'
+    Running atomic-check 'timing'
+    Running atomic-check 'routability'
+    Running atomic-check 'hier_pre_route'
+
+  *** EMS Message summary ***
+  ----------------------------------------------------------------------------------------------------
+  Rule         Type   Count      Message
+  ----------------------------------------------------------------------------------------------------
+  DFT-011      Info   1          The design has no scan chain defined in the scandef.
+  TCK-001      Warn   74         The reported endpoint '%endpoint' is unconstrained. Reason: '%re...
+  TCK-012      Warn   1          The input port '%port' has no clock_relative delay specified. Mo...
+  ----------------------------------------------------------------------------------------------------
+  Total 76 EMS messages : 0 errors, 75 warnings, 1 info.
+  ----------------------------------------------------------------------------------------------------
+
+  *** Non-EMS message summary ***
+  ----------------------------------------------------------------------------------------------------
+  Rule         Type   Count      Message
+  ----------------------------------------------------------------------------------------------------
+  ZRT-022             1          Cannot find a default contact code for layer %s.
+  ZRT-027             1          Ignore %d top cell ports with no pins.
+  ZRT-613             2          RC layer preference is turned %s for this design.
+  ----------------------------------------------------------------------------------------------------
+  Total 4 non-EMS messages : 0 errors, 2 warnings, 2 info.
+  ----------------------------------------------------------------------------------------------------
+
+Warning: EMS database "check_design.ems" already exists, over-writing it. (EMS-040)
+
+Information: EMS database is saved to file 'check_design.ems'.
+Information: Non-EMS messages are saved into file 'check_design2023Apr08194408.log'.
+1

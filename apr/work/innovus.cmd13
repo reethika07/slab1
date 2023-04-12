@@ -1,0 +1,329 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Mon Apr 10 21:10:55 2023                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.16-s053_1 (64bit) 08/31/2020 13:16 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.16-s053_1 NR200827-1939/19_16-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+#@(#)CDS: AAE 19.16-s019 (64bit) 08/31/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.16-s019_1 () Aug 22 2020 00:37:42 ( )
+#@(#)CDS: SYNTECH 19.16-s010_1 () Aug 17 2020 09:10:13 ( )
+#@(#)CDS: CPE v19.16-s038
+#@(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+alias fs set top_design fifo1_sram
+alias f set top_design fifo1
+alias o set top_design ORCA_TOP
+alias e set top_design ExampleRocketSystem
+set_table_style -name report_timing -max_widths { 8,6,23,70} -no_frame_fix_width
+set_global report_timing_format  {delay arrival slew cell hpin}
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+win
+fs
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+set search_path {}
+set init_lef_file {../../cadence_cap_tech/tech.lef saed32nm_rvt_1p9m.lef saed32nm_hvt_1p9m.lef saed32sram.lef saed32nm_lvt_1p9m.lef saed32_PLL.lef saed32_io_wb_all.lef}
+set init_mmmc_file mmmc.tcl
+set init_design_netlisttype Verilog
+set init_verilog ../../syn/outputs/fifo1_sram.genus_phys.vg
+set init_top_cell fifo1_sram
+set init_pwr_net VDD
+set init_gnd_net VSS
+init_design
+defIn ../outputs/fifo1_sram.floorplan.innovus.def
+add_tracks -honor_pitch
+setNanoRouteMode -drouteEndIteration 10
+all_constraint_modes -active
+set_interactive_constraint_modes [all_constraint_modes -active]
+create_clock -name "wclk" -period $wclk_period  wclk
+set_clock_uncertainty -setup 0.07 wclk
+set_clock_uncertainty -hold 0.01 wclk
+set_clock_transition 0.2 wclk
+set_clock_latency 0.1 wclk
+create_clock -name "rclk" -period $rclk_period rclk
+set_clock_uncertainty -setup 0.07 rclk
+set_clock_uncertainty -hold 0.01 rclk
+set_clock_transition 0.2 rclk
+set_clock_latency 0.1 rclk
+create_clock -name "wclk2x" -period $wclk2x_period wclk2x
+set_clock_uncertainty 0.07 -setup wclk2x
+set_clock_uncertainty 0.01 -hold wclk2x
+set_clock_transition 0.2 wclk2x
+set_clock_latency 0.1 wclk2x
+set_false_path -from [get_clocks wclk ] -to [get_clocks rclk]
+set_false_path -from [get_clocks rclk ] -to [ get_clocks wclk]
+set_input_delay 0.0 wdata_in* -clock wclk2x
+set_input_delay 0.0 winc -clock wclk
+set_input_delay 0.0 rinc -clock rclk
+set_output_delay -0.5 rdata* -clock rclk
+set_output_delay -0.5 {rempty } -clock rclk
+set_output_delay -0.5 { wfull } -clock wclk
+set_input_delay 0.0 rrst_n -clock rclk
+set_input_delay 0.0 rrst_n -clock wclk -add_delay
+set_input_delay 0.0 rrst_n -clock wclk2x -add_delay
+set_drive 0.00001 [all_inputs ]
+set_load 0.5 [all_outputs]
+group_path -name INPUTS -from [ get_ports -filter "direction==in&&full_name!~*clk*" ]
+group_path -name OUTPUTS -to [ get_ports -filter "direction==out" ]
+setDontUse *DELLN* true
+createBasicPathGroups -expanded
+saveDesign fifo1_sram_floorplan.innovus
+setOptMode -usefulSkew false
+setOptMode -usefulSkewCCOpt none
+setOptMode -usefulSkewPostRoute false
+setOptMode -usefulSkewPreCTS false
+place_opt_design
+redirect -tee ../reports/fifo1_sram.innovus.place.congestion.2d.rpt { reportCongestion -hotSpot -overflow -includeBlockage }
+redirect -tee ../reports/fifo1_sram.innovus.place.congestion.3d.rpt { reportCongestion -hotSpot -overflow -includeBlockage -3d }
+timeDesign -preCTS -prefix place -outDir ../reports/fifo1_sram.innovus -expandedViews
+redirect -tee ../reports/fifo1_sram.innovus.place.density.rpt { reportDensityMap }
+summaryReport -noHtml -outfile ../reports/fifo1_sram.innovus.place.summary.rpt
+saveDesign fifo1_sram_place.innovus
+setDesignMode -process 28
+setOptMode -usefulSkew false
+setOptMode -usefulSkewCCOpt none
+setOptMode -usefulSkewPostRoute false
+setOptMode -usefulSkewPreCTS false
+set_ccopt_property update_io_latency false
+set_ccopt_property routing_top_min_fanout 10000
+add_ndr -name CTS_RULE -spacing {M1 0.1 M2:M8 0.112 } -width_multiplier {M3:M8 2 } -generate_via
+create_route_type -name top_type -non_default_rule CTS_RULE -top_preferred_layer M8 -bottom_preferred_layer M7
+set_ccopt_property -net_type top route_type top_type
+create_route_type -name trunk_type -non_default_rule CTS_RULE -top_preferred_layer M6 -bottom_preferred_layer M5
+set_ccopt_property -net_type trunk route_type trunk_type
+setNanoRouteMode -droutePostRouteSpreadWire false
+ccopt_design
+setAnalysisMode -analysisType onChipVariation
+setAnalysisMode -cppr both
+optDesign -postCTS -hold
+report_ccopt_skew_groups -summary -file ../reports/fifo1_sram.innovus.postcts.ccopt_skew_groups.rpt
+report_ccopt_clock_trees -summary -file ../reports/fifo1_sram.innovus.postcts.ccopt_clock_trees.rpt
+timeDesign -postCTS -prefix postcts -outDir ../reports/fifo1_sram.innovus -expandedViews
+timeDesign -postCTS -hold -prefix postcts -outDir ../reports/fifo1_sram.innovus -expandedViews
+redirect -tee ../reports/fifo1_sram.innovus.postcts.density.rpt { reportDensityMap }
+summaryReport -noHtml -outfile ../reports/fifo1_sram.innovus.postcts.summary.rpt
+saveDesign fifo1_sram_postcts.innovus
+setOptMode -usefulSkew false
+setOptMode -usefulSkewCCOpt none
+setOptMode -usefulSkewPostRoute false
+setOptMode -usefulSkewPreCTS false
+setNanoRouteMode -droutePostRouteSpreadWire false
+routeDesign
+optDesign -postRoute -setup -hold
+globalNetConnect VDD -type pgpin -pin VDD -inst *
+globalNetConnect VSS -type pgpin -pin VSS -inst *
+saveDesign fifo1_sram_route.innovus
+report_ccopt_skew_groups -summary -file ../reports/fifo1_sram.innovus.route.ccopt_skew_groups.rpt
+report_ccopt_clock_trees -summary -file ../reports/fifo1_sram.innovus.route.ccopt_clock_trees.rpt
+verify_drc -limit 100000 -report ../reports/fifo1_sram.innovus.route.drc.all.rpt
+verify_drc -limit 100000 -check_only regular -report ../reports/fifo1_sram.innovus.route.drc.regular.rpt
+verifyConnectivity -error 100000 -noAntenna -report ../reports/fifo1_sram.innovus.route.connectivity.rpt
+timeDesign -postRoute -prefix route -outDir ../reports/fifo1_sram.innovus -expandedViews
+timeDesign -postRoute -si -prefix route_si -outDir ../reports/fifo1_sram.innovus -expandedViews
+timeDesign -postRoute -hold -prefix route -outDir ../reports/fifo1_sram.innovus -expandedViews
+timeDesign -postRoute -hold -si -prefix route_si -outDir ../reports/fifo1_sram.innovus -expandedViews
+report_power > ../reports/fifo1_sram.innovus.route.power.rpt
+redirect -tee ../reports/fifo1_sram.innovus.route.density.rpt { reportDensityMap }
+summaryReport -noHtml -outfile ../reports/fifo1_sram.innovus.route.summary.rpt
+saveNetlist ../outputs/fifo1_sram.route.innovus.vg
+saveModel -spef -dir fifo1_sram_route_spef
+win on
+report_timing -machine_readable -from [all_registers] -to [all_registers] > foo.mtarpt -color_index 1
+report_timing -machine_readable -from [all_registers] -to [all_registers] > foo.mtarpt
+load_timing_debug_report foo.mtarpt
+highlight_timing_report -file foo.mtarpt -path 1
+highlight_timing_report {-file foo.mtarpt -path 1}
+setLayerPreference M0Wire -isVisible 1
+setLayerPreference M0Track -isVisible 1
+setLayerPreference M0Pin -isVisible 1
+setLayerPreference M0RB -isVisible 1
+setLayerPreference M0Vio -isVisible 1
+setLayerPreference M0Patch -isVisible 1
+setLayerPreference M0EOL -isVisible 1
+setLayerPreference M0Wire -isVisible 1
+setLayerPreference M0Track -isVisible 1
+setLayerPreference M0Pin -isVisible 1
+setLayerPreference M0RB -isVisible 1
+setLayerPreference M0Vio -isVisible 1
+setLayerPreference M0Patch -isVisible 1
+setLayerPreference M0EOL -isVisible 1
+setLayerPreference M7Wire -isVisible 1
+setLayerPreference M7Track -isVisible 1
+setLayerPreference M7Pin -isVisible 1
+setLayerPreference M7RB -isVisible 1
+setLayerPreference M7Vio -isVisible 1
+setLayerPreference M7Patch -isVisible 1
+setLayerPreference M7EOL -isVisible 1
+setLayerPreference CO -isVisible 0
+setLayerPreference M1 -isVisible 0
+setLayerPreference PO -isVisible 0
+setLayerPreference VIA1 -isVisible 0
+setLayerPreference M2 -isVisible 0
+setLayerPreference VIA2 -isVisible 0
+setLayerPreference M3 -isVisible 0
+setLayerPreference VIA3 -isVisible 0
+setLayerPreference M4 -isVisible 0
+setLayerPreference VIA4 -isVisible 0
+setLayerPreference M5 -isVisible 0
+setLayerPreference VIA5 -isVisible 0
+setLayerPreference M6 -isVisible 0
+setLayerPreference VIA6 -isVisible 0
+setLayerPreference M7 -isVisible 0
+setLayerPreference VIA7 -isVisible 0
+setLayerPreference M8 -isVisible 0
+setLayerPreference VIA8 -isVisible 0
+setLayerPreference M9 -isVisible 0
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+::dehighlight marker:0x7fe530bc24a0
+::dehighlight marker:0x7fe530bc24a0
+::highlight marker:0x7fe530bc24a0 -index 10
+::highlight marker:0x7fe530bc24a0 -original
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+::dehighlight marker:0x7fe530bc24a0
+::dehighlight marker:0x7fe530bc24a0
+selectMarker 288.5000 288.5000 911.5960 911.5960 -1 3 7
+setLayerPreference node_inst -isVisible 0
+setLayerPreference node_inst -isVisible 1
+setLayerPreference node_module -isVisible 0
+setLayerPreference node_module -isVisible 1
+setLayerPreference node_cell -isVisible 1
+setLayerPreference node_cell -isVisible 0
+setLayerPreference node_blockage -isVisible 1
+setLayerPreference node_blockage -isVisible 0
+setLayerPreference node_blockage -isVisible 1
+setLayerPreference node_cell -isVisible 1
+setLayerPreference node_cell -isVisible 0
+setLayerPreference node_floorplan -isVisible 1
+setLayerPreference node_floorplan -isVisible 0
+setLayerPreference node_partition -isVisible 0
+setLayerPreference node_partition -isVisible 1
+setLayerPreference node_net -isVisible 0
+setLayerPreference node_net -isVisible 1
+setLayerPreference node_route -isVisible 0
+setLayerPreference node_route -isVisible 1
+setLayerPreference node_misc -isVisible 1
+setLayerPreference node_misc -isVisible 0
+setLayerPreference node_misc -isVisible 1
+deselectAll
+::dehighlight marker:0x7fe530bc24a0
+::highlight marker:0x7fe530bc24a0 -index 2
+::highlight marker:0x7fe530bc24a0 -index 3
+::highlight marker:0x7fe530bc24a0 -index 48
+::highlight marker:0x7fe530bc24a0 -index 45
+select_highlighted -type wire
+select_highlighted -type instance
+select_highlighted -type via
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+gui_select -rect {448.43100 720.76900 403.25000 549.93100}
+deselectAll
+deselectAll
+set_visible_nets 0x0
+setLayerPreference node_net -isVisible 0
+::dehighlight marker:0x7fe530bc24a0
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+setLayerPreference node_net -isVisible 1
+deselectAll
+gui_select -rect {900.23500 907.13800 1496.05200 863.37000}
+::dehighlight marker:0x7fe530bc24a0
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+::dehighlight marker:0x7fe530bc24a0
+highlight_timing_report -file foo.mtarpt -path 1
+highlight_timing_report {-file foo.mtarpt -path 1}
+selectMarker 288.5000 288.5000 911.5960 911.5960 -1 3 7
+set_visible_nets 0x0
+::dehighlight marker:0x7fe51c25d310
+::dehighlight marker:0x7fe530bc24a0
+deselectAll
+selectMarker 288.5000 288.5000 911.5960 911.5960 -1 3 7
+zoomBox -332.59300 -54.10900 2429.72500 1444.15400
+zoomBox -86.92600 -45.88700 2261.04600 1227.63700
+zoomBox -332.59500 -54.11000 2429.72500 1444.15400
+zoomBox -545.69800 -87.82000 2704.09100 1674.84400
+zoomBox -1340.13300 -264.63400 3951.60900 2605.57100
+zoomBox -1047.06700 -219.76800 3450.91400 2219.90700
+zoomBox -589.22500 -143.21100 2660.56800 1619.45500
+zoomBox -416.28200 -116.53700 2346.04400 1381.73000
+zoomBox -589.22700 -143.21200 2660.56900 1619.45500
+gui_select -rect {448.44100 720.53400 454.30300 589.60400}
+deselectAll
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserClose
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserClose
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserClose
+deselectAll
+highlight_timing_report -file foo.mtarpt -path 1 -noarrow
+highlight_timing_report {-file foo.mtarpt -path 1 -noarrow}
+gui_select -rect {507.06700 915.95200 522.70100 482.12500}
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+gui_select -rect {292.10800 288.66200 628.22600 529.02500}
+deselectAll
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+setLayerPreference node_track -isVisible 1
+setLayerPreference node_track -isVisible 0
+deselectAll
+selectMarker 288.5000 288.5000 911.5960 911.5960 -1 3 7
+deselectAll
+deselectAll
+selectMarker 288.5000 288.5000 911.5960 911.5960 -1 3 7
+deselectAll
+selectMarker 288.5000 288.5000 911.5960 911.5960 -1 3 7
+deselectAll
+selectMarker 295.0000 295.0000 905.0960 905.0960 -1 3 7
+setLayerPreference PO -isVisible 1
+setLayerPreference CO -isVisible 1
+setLayerPreference M1 -isVisible 1
+setLayerPreference M2 -isVisible 1
+setLayerPreference VIA3 -isVisible 1
+setLayerPreference VIA2 -isVisible 1
+setLayerPreference M3 -isVisible 1
+setLayerPreference VIA3 -isVisible 0
+setLayerPreference M3 -isVisible 0
+setLayerPreference VIA2 -isVisible 0
+setLayerPreference M2 -isVisible 0
+setLayerPreference M1 -isVisible 0
+setLayerPreference CO -isVisible 0
+setLayerPreference PO -isVisible 0
+deselectAll
+setLayerPreference VIARDL -isVisible 0
+setLayerPreference MRDL -isVisible 0
+zoomBox -298.15100 -87.51700 2464.17500 1410.75000
+zoomBox -813.00200 -152.10800 3010.28700 1921.61800
+zoomBox -384.00300 68.59900 2865.79300 1831.26600

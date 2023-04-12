@@ -1,0 +1,179 @@
+****************************************
+Report : constraint
+        -all_violators
+Design : fifo1_sram
+Version: Q-2019.12-SP4
+Date   : Sat Apr  8 19:43:10 2023
+****************************************
+
+   late_timing
+   -----------
+
+Information: Timer using 'SI, Timing Window Analysis, CRPR'. (TIM-050)
+Endpoint                         Path Delay     Path Required       CRP    Slack Group    Scenario
+----------------------------------------------------------------------------------------------------------
+wptr_full/wfull_reg/D (SDFFARX1_LVT)   1.77 r     1.46           0.00    -0.31   wclk     func_slow
+wptr_full/wptr_reg_9_/D (SDFFARX1_LVT)   1.46 f   1.44           0.00    -0.02   wclk     func_slow
+wptr_full/wptr_reg_2_/D (SDFFARX1_LVT)   1.45 f   1.44           0.00    -0.01   wclk     func_slow
+wptr_full/wptr_reg_5_/D (SDFFARX1_LVT)   1.45 f   1.45           0.00    -0.00   wclk     func_slow
+rptr_empty/rempty_reg/D (SDFFASX1_LVT)   1.75 r   1.55           0.00    -0.20   rclk     func_slow
+rptr_empty/rptr_reg_9_/D (SDFFARX2_RVT)   1.49 f   1.47          0.00    -0.03   rclk     func_slow
+rptr_empty/rbin_reg_2_/SETB (SDFFASX2_LVT)  19.22 r  18.85       0.00    -0.37   INPUTS   func_slow
+rptr_empty/rbin_reg_8_/SETB (SDFFASX2_LVT)  19.23 r  18.87       0.00    -0.36   INPUTS   func_slow
+rptr_empty/rbin_reg_1_/SETB (SDFFASX2_LVT)  19.22 r  18.86       0.00    -0.36   INPUTS   func_slow
+wptr_full/wfull_reg/D (SDFFARX1_LVT)   1.81 r     1.46           0.00    -0.35   INPUTS   func_slow
+rptr_empty/rempty_reg/SETB (SDFFASX1_LVT)  19.18 r  18.83        0.00    -0.35   INPUTS   func_slow
+rptr_empty/rbin_reg_6_/RSTB (SDFFARX2_LVT)  19.29 r  18.96       0.00    -0.33   INPUTS   func_slow
+rptr_empty/rbin_reg_4_/RSTB (SDFFARX2_LVT)  19.29 r  18.97       0.00    -0.33   INPUTS   func_slow
+rptr_empty/rbin_reg_0_/RSTB (SDFFARX1_LVT)  19.29 r  18.97       0.00    -0.32   INPUTS   func_slow
+rptr_empty/rptr_reg_7_/RSTB (SDFFARX1_LVT)  19.29 r  18.98       0.00    -0.32   INPUTS   func_slow
+rptr_empty/rbin_reg_3_/RSTB (SDFFARX1_LVT)  19.29 r  18.98       0.00    -0.31   INPUTS   func_slow
+rptr_empty/rbin_reg_9_/RSTB (SDFFARX2_LVT)  19.29 r  18.98       0.00    -0.31   INPUTS   func_slow
+rptr_empty/rptr_reg_8_/RSTB (SDFFARX2_LVT)  19.29 r  18.98       0.00    -0.31   INPUTS   func_slow
+rptr_empty/rbin_reg_10_/RSTB (SDFFARX1_LVT)  19.29 r  18.99      0.00    -0.30   INPUTS   func_slow
+rptr_empty/rptr_reg_3_/RSTB (SDFFARX1_LVT)  19.29 r  18.99       0.00    -0.30   INPUTS   func_slow
+rptr_empty/rbin_reg_7_/RSTB (SDFFARX1_LVT)  19.29 r  18.99       0.00    -0.30   INPUTS   func_slow
+rptr_empty/rbin_reg_5_/RSTB (SDFFARX1_LVT)  19.29 r  19.00       0.00    -0.30   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_1_/RSTB (DFFARX1_RVT)  19.29 r  19.01      0.00    -0.28   INPUTS   func_slow
+rptr_empty/rptr_reg_9_/RSTB (SDFFARX2_RVT)  19.29 r  19.02       0.00    -0.27   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_0_/RSTB (DFFARX1_RVT)  19.29 r  19.02      0.00    -0.27   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_2_/RSTB (DFFARX1_RVT)  19.29 r  19.02      0.00    -0.27   INPUTS   func_slow
+rptr_empty/rptr_reg_0_/RSTB (SDFFARX1_RVT)  19.29 r  19.02       0.00    -0.27   INPUTS   func_slow
+rptr_empty/rptr_reg_2_/RSTB (SDFFARX1_RVT)  19.29 r  19.02       0.00    -0.27   INPUTS   func_slow
+rptr_empty/rempty_reg/D (SDFFASX1_LVT)   1.82 r   1.55           0.00    -0.27   INPUTS   func_slow
+rptr_empty/rptr_reg_1_/RSTB (SDFFARX1_RVT)  19.27 r  19.01       0.00    -0.26   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_3_/RSTB (DFFARX1_RVT)  19.30 r  19.04      0.00    -0.26   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_8_/RSTB (DFFARX1_RVT)  19.30 r  19.04      0.00    -0.26   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_10_/RSTB (DFFARX1_RVT)  19.30 r  19.04     0.00    -0.26   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_9_/RSTB (DFFARX1_RVT)  19.30 r  19.04      0.00    -0.26   INPUTS   func_slow
+rptr_empty/rptr_reg_4_/RSTB (SDFFARX1_RVT)  19.29 r  19.04       0.00    -0.26   INPUTS   func_slow
+rptr_empty/rptr_reg_6_/RSTB (SDFFARX1_RVT)  19.29 r  19.04       0.00    -0.25   INPUTS   func_slow
+rptr_empty/rptr_reg_5_/RSTB (SDFFARX1_RVT)  19.29 r  19.04       0.00    -0.25   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_6_/RSTB (DFFARX1_RVT)  19.29 r  19.04      0.00    -0.25   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_4_/RSTB (DFFARX1_RVT)  19.23 r  19.04      0.00    -0.19   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_5_/RSTB (DFFARX1_RVT)  19.23 r  19.04      0.00    -0.19   INPUTS   func_slow
+sync_w2r/rq2_wptr_reg_7_/RSTB (DFFARX1_RVT)  19.23 r  19.04      0.00    -0.19   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_2_/RSTB (SDFFARX1_HVT)  19.29 r  19.12     0.00    -0.17   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_10_/RSTB (SDFFARX1_HVT)  19.29 r  19.14    0.00    -0.15   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_8_/RSTB (SDFFARX1_HVT)  19.29 r  19.14     0.00    -0.15   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_3_/RSTB (SDFFARX1_HVT)  19.29 r  19.14     0.00    -0.15   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_9_/RSTB (SDFFARX1_HVT)  19.29 r  19.14     0.00    -0.15   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_6_/RSTB (SDFFARX1_HVT)  19.29 r  19.14     0.00    -0.15   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_1_/RSTB (SDFFARX1_HVT)  19.29 r  19.14     0.00    -0.15   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_4_/RSTB (SDFFARX1_HVT)  19.29 r  19.14     0.00    -0.15   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_0_/RSTB (SDFFARX1_HVT)  19.29 r  19.14     0.00    -0.15   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_5_/RSTB (SDFFARX1_HVT)  19.29 r  19.14     0.00    -0.15   INPUTS   func_slow
+wdata_reg_7_/D (SDFFASX1_LVT)      0.91 f         0.80           0.00    -0.11   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_7_/RSTB (SDFFARX1_HVT)  19.23 r  19.14     0.00    -0.09   INPUTS   func_slow
+wdata_reg_0_/D (SDFFARX1_LVT)      0.88 r         0.80           0.00    -0.08   INPUTS   func_slow
+wdata_reg_6_/D (SDFFARX1_LVT)      0.87 r         0.79           0.00    -0.08   INPUTS   func_slow
+wdata_reg_5_/D (SDFFARX1_LVT)      0.87 r         0.80           0.00    -0.07   INPUTS   func_slow
+wdata_reg_1_/D (SDFFARX1_LVT)      0.87 r         0.80           0.00    -0.07   INPUTS   func_slow
+wdata_reg_4_/D (SDFFARX1_LVT)      0.87 r         0.80           0.00    -0.07   INPUTS   func_slow
+wdata_reg_3_/D (SDFFARX1_LVT)      0.87 r         0.80           0.00    -0.07   INPUTS   func_slow
+wdata_reg_2_/D (SDFFARX1_LVT)      0.87 r         0.81           0.00    -0.06   INPUTS   func_slow
+rptr_empty/rptr_reg_5_/D (SDFFARX1_RVT)   1.54 f   1.48          0.00    -0.06   INPUTS   func_slow
+wptr_full/wptr_reg_9_/D (SDFFARX1_LVT)   1.49 f   1.43           0.00    -0.05   INPUTS   func_slow
+rptr_empty/rptr_reg_9_/D (SDFFARX2_RVT)   1.51 f   1.46          0.00    -0.04   INPUTS   func_slow
+wptr_full/wptr_reg_7_/D (SDFFARX1_LVT)   1.48 f   1.44           0.00    -0.04   INPUTS   func_slow
+wptr_full/wptr_reg_2_/D (SDFFARX1_LVT)   1.47 f   1.44           0.00    -0.03   INPUTS   func_slow
+wptr_full/wptr_reg_5_/D (SDFFARX1_LVT)   1.47 f   1.44           0.00    -0.03   INPUTS   func_slow
+wptr_full/wptr_reg_4_/D (SDFFARX1_LVT)   1.47 f   1.44           0.00    -0.03   INPUTS   func_slow
+rptr_empty/rptr_reg_6_/D (SDFFARX1_RVT)   1.48 f   1.47          0.00    -0.01   INPUTS   func_slow
+wptr_full/wptr_reg_8_/D (SDFFARX1_LVT)   1.45 f   1.44           0.00    -0.01   INPUTS   func_slow
+rdata[7] (out)                     2.72 f         2.23           0.00    -0.49   OUTPUTS  func_slow
+rdata[3] (out)                     2.68 f         2.23           0.00    -0.45   OUTPUTS  func_slow
+rdata[5] (out)                     2.67 f         2.23           0.00    -0.44   OUTPUTS  func_slow
+rdata[4] (out)                     2.67 f         2.23           0.00    -0.44   OUTPUTS  func_slow
+rdata[6] (out)                     2.66 f         2.23           0.00    -0.43   OUTPUTS  func_slow
+rdata[2] (out)                     2.63 f         2.23           0.00    -0.40   OUTPUTS  func_slow
+rdata[1] (out)                     2.62 f         2.23           0.00    -0.39   OUTPUTS  func_slow
+rdata[0] (out)                     2.59 f         2.23           0.00    -0.36   OUTPUTS  func_slow
+wfull (out)                        2.31 f         2.12           0.00    -0.19   OUTPUTS  func_slow
+rempty (out)                       2.41 f         2.23           0.00    -0.18   OUTPUTS  func_slow
+
+   early_timing
+   -----------
+
+Information: Timer using 'SI, Timing Window Analysis, CRPR'. (TIM-050)
+Endpoint                         Path Delay     Path Required       CRP    Slack Group    Scenario
+----------------------------------------------------------------------------------------------------------
+sync_w2r/rq1_wptr_reg_7_/RSTB (SDFFARX1_HVT)   0.93 r   1.04    -0.00    -0.11   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_8_/RSTB (SDFFARX1_HVT)   0.99 r   1.04    -0.00    -0.05   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_0_/RSTB (SDFFARX1_HVT)   0.99 r   1.04    -0.00    -0.05   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_1_/RSTB (SDFFARX1_HVT)   0.99 r   1.04    -0.00    -0.05   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_9_/RSTB (SDFFARX1_HVT)   0.99 r   1.04    -0.00    -0.05   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_3_/RSTB (SDFFARX1_HVT)   0.99 r   1.04    -0.00    -0.05   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_6_/RSTB (SDFFARX1_HVT)   0.99 r   1.04    -0.00    -0.05   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_4_/RSTB (SDFFARX1_HVT)   0.99 r   1.04    -0.00    -0.05   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_5_/RSTB (SDFFARX1_HVT)   0.99 r   1.04    -0.00    -0.05   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_10_/RSTB (SDFFARX1_HVT)   0.99 r   1.04   -0.00    -0.05   INPUTS   func_slow
+sync_w2r/rq1_wptr_reg_2_/RSTB (SDFFARX1_HVT)   0.99 r   1.02    -0.00    -0.02   INPUTS   func_slow
+
+   Mode: func Corner: slow
+   Scenario: func_slow
+   max_transition                                                              
+                             Required        Actual                            
+   Net                      Transition     Transition        Slack  Violation  
+  ---------------------------------------------------------------------------
+   wptr_full/n106               0.16           0.15           0.01  (MET)      
+
+  ---------------------------------------------------------------------------
+   Number of max_transition violation(s): 0
+
+   Mode: func Corner: slow
+   Scenario: func_slow
+   max_capacitance                                                             
+                             Required        Actual                            
+   Net                      Capacitance    Capacitance       Slack  Violation  
+  ---------------------------------------------------------------------------
+   fifomem/n78_CDR1            25.00          31.20          -6.20  (VIOLATED) 
+     PIN : fifomem/genblk1_1__U/O2[6]    25.00    31.20      -6.20  (VIOLATED) 
+
+   fifomem/n87_CDR1            25.00          30.63          -5.63  (VIOLATED) 
+     PIN : fifomem/genblk1_2__U/O2[7]    25.00    30.63      -5.63  (VIOLATED) 
+
+   fifomem/n76                 25.00          30.57          -5.57  (VIOLATED) 
+     PIN : fifomem/genblk1_7__U/O2[5]    25.00    30.57      -5.57  (VIOLATED) 
+
+   fifomem/n69_CDR1            25.00          30.43          -5.43  (VIOLATED) 
+     PIN : fifomem/genblk1_0__U/O2[5]    25.00    30.43      -5.43  (VIOLATED) 
+
+   fifomem/n88_CDR1            25.00          29.74          -4.74  (VIOLATED) 
+     PIN : fifomem/genblk1_3__U/O2[7]    25.00    29.74      -4.74  (VIOLATED) 
+
+   fifomem/n70_CDR1            25.00          29.19          -4.19  (VIOLATED) 
+     PIN : fifomem/genblk1_1__U/O2[5]    25.00    29.19      -4.19  (VIOLATED) 
+
+   fifomem/n52                 25.00          29.10          -4.10  (VIOLATED) 
+     PIN : fifomem/genblk1_7__U/O2[2]    25.00    29.10      -4.10  (VIOLATED) 
+
+   fifomem/n92                 25.00          29.04          -4.04  (VIOLATED) 
+     PIN : fifomem/genblk1_7__U/O2[7]    25.00    29.04      -4.04  (VIOLATED) 
+
+   fifomem/n71_CDR1            25.00          28.80          -3.80  (VIOLATED) 
+     PIN : fifomem/genblk1_2__U/O2[5]    25.00    28.80      -3.80  (VIOLATED) 
+
+   fifomem/n86_CDR1            25.00          28.77          -3.77  (VIOLATED) 
+     PIN : fifomem/genblk1_1__U/O2[7]    25.00    28.77      -3.77  (VIOLATED) 
+
+   fifomem/n79_CDR1            25.00          28.19          -3.19  (VIOLATED) 
+     PIN : fifomem/genblk1_2__U/O2[6]    25.00    28.19      -3.19  (VIOLATED) 
+
+   fifomem/n72_CDR1            25.00          27.90          -2.90  (VIOLATED) 
+     PIN : fifomem/genblk1_3__U/O2[5]    25.00    27.90      -2.90  (VIOLATED) 
+
+   fifomem/n80_CDR1            25.00          27.04          -2.04  (VIOLATED) 
+     PIN : fifomem/genblk1_3__U/O2[6]    25.00    27.04      -2.04  (VIOLATED) 
+
+  ---------------------------------------------------------------------------
+   Number of max_capacitance violation(s): 13
+
+
+   Mode: func Corner: slow
+   Scenario: func_slow
+  ---------------------------------------------------------------------------
+   Number of min_capacitance violation(s): 0
+
+   Total number of violation(s): 13
+1

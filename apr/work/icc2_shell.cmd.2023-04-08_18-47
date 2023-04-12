@@ -1,0 +1,14 @@
+#@ # 
+#@ # Running icc2_shell Version Q-2019.12-SP4 for linux64 -- May 26, 2020
+#@ # Date:   Sat Apr  8 18:46:59 2023
+#@ # Run by: reethika@auto.ece.pdx.edu
+#@ 
+
+source /home/reethika/common/Documents/lab1-reethika07-master/apr/work/.synopsys_icc2.setup
+change_selection [get_timing_path -group INPUTS]
+gui_start
+gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {Logical Cells}
+gui_scroll -window [gui_get_current_window -view] -vrel -.2
+gui_scroll -window [gui_get_current_window -view] -vrel -.2
+fs
+source ../scripts/icc2.tcl

@@ -1,0 +1,188 @@
+Error: Library Compiler executable path is not set. (PT-063)
+setting auto_restore_mw_cel_lib_setup true
+pt_shell> fs
+setting top_design to: 
+fifo1_sram
+pt_shell> source ../scripts/pt_min.tcl
+Information: current_design won't return any data before link (DES-071)
+Loading verilog file '/home/reethika/common/Documents/lab1-reethika07-master/apr/outputs/fifo1_sram.route2.vg.gz'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ff0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ff1p16vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ff0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ff1p16vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ff1p16vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/io_std/db_nldm/saed32io_wb_ff1p16vn40c_2p75v.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/db_nldm/saed32sram_ff1p16vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/pll/db_nldm/saed32pll_ff1p16vn40c_2p75v.db'
+Linking design fifo1_sram...
+Removed 18830 unconnected cells and blackboxes.
+Information: Removing 5 unneeded designs..... (LNK-034)
+Information: 285 (96.94%) library cells are unused in library saed32hvt_ff0p95vn40c..... (LNK-045)
+Information: 294 (100.00%) library cells are unused in library saed32hvt_ff1p16vn40c..... (LNK-045)
+Information: 273 (92.86%) library cells are unused in library saed32rvt_ff0p95vn40c..... (LNK-045)
+Information: 294 (100.00%) library cells are unused in library saed32rvt_ff1p16vn40c..... (LNK-045)
+Information: 227 (77.21%) library cells are unused in library saed32lvt_ff0p95vn40c..... (LNK-045)
+Information: 294 (100.00%) library cells are unused in library saed32lvt_ff1p16vn40c..... (LNK-045)
+Information: 60 (96.77%) library cells are unused in library saed32io_wb_ff1p16vn40c_2p75v..... (LNK-045)
+Information: 34 (97.14%) library cells are unused in library saed32sram_ff1p16vn40c..... (LNK-045)
+Information: 1 (100.00%) library cells are unused in library saed32pll_ff1p16vn40c_2p75v..... (LNK-045)
+Information: total 1762 library cells are unused (LNK-046)
+Design 'fifo1_sram' was successfully linked.
+Information: There are 684 leaf cells, ports, hiers and 1020 nets in the design (LNK-047)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Log for 'read_parasitics command' will be generated in 'parasitics_command.log'. (PARA-107)
+Information: Checked out license 'PrimePower' (PT-019)
+if { [info exists synopsys_program_name ] && ($synopsys_program_name == "icc2_shell") } {
+    puts " Creating ICC2 MCMM "
+    create_mode func
+    create_corner slow
+    create_scenario -mode func -corner slow -name func_slow
+    current_scenario func_slow
+    set_operating_conditions ss0p75v125c
+    read_parasitic_tech -tlup $tlu_dir/saed32nm_1p9m_Cmax.tluplus -layermap $tlu_dir/saed32nm_tf_itf_tluplus.map -name Cmax
+    read_parasitic_tech -tlup $tlu_dir/saed32nm_1p9m_Cmin.tluplus -layermap $tlu_dir/saed32nm_tf_itf_tluplus.map -name Cmin
+    set_parasitic_parameters -early_spec Cmax -early_temperature 125
+    set_parasitic_parameters -late_spec Cmax -late_temperature 125
+    #set_parasitic_parameters -early_spec 1p9m_Cmax -early_temperature 125 -corner default
+    #set_parasitic_parameters -late_spec 1p9m_Cmax -late_temperature 125 -corner default
+
+    #set_scenario_status  default -active false
+    set_scenario_status func_slow -active true -hold true -setup true
+}
+set wclk_period 1.18
+1.18
+set rclk_period 1.22
+1.22
+set wclk2x_period [ expr $wclk_period / 2 ]
+0.59
+create_clock -name "wclk" -period $wclk_period  wclk
+1
+# 0.07 ns is fairly typical for pll jitter plus other jitter.
+set_clock_uncertainty -setup 0.07 wclk
+1
+set_clock_uncertainty -hold 0.01 wclk
+1
+set_clock_transition 0.2 wclk
+1
+set_clock_latency 0.1 wclk
+1
+create_clock -name "rclk" -period $rclk_period rclk
+1
+set_clock_uncertainty -setup 0.07 rclk
+1
+set_clock_uncertainty -hold 0.01 rclk
+1
+set_clock_transition 0.2 rclk
+1
+set_clock_latency 0.1 rclk
+1
+#Add the new clock.  Make it 1/2 the wclk period since it is called wclk2x
+create_clock -name "wclk2x" -period $wclk2x_period wclk2x
+1
+set_clock_uncertainty 0.07 -setup wclk2x
+1
+set_clock_uncertainty 0.01 -hold wclk2x
+1
+set_clock_transition 0.2 wclk2x
+1
+set_clock_latency 0.1 wclk2x
+1
+set_false_path -from [get_clocks wclk ] -to [get_clocks rclk]
+1
+set_false_path -from [get_clocks rclk ] -to [ get_clocks wclk]
+1
+# Add input/output delays in relation to related clocks
+# Can tell the related clock by doing report_timing -group INPUTS  or -group OUTPUTS after using group_path
+# External delay should be some percentage of clock period.
+# Tune/relax if violating; most concerned about internal paths.
+set_input_delay 0.0 wdata_in* -clock wclk2x
+1
+set_input_delay 0.0 winc -clock wclk
+1
+set_input_delay 0.0 rinc -clock rclk
+1
+set_output_delay -0.5 rdata* -clock rclk
+1
+set_output_delay -0.5 {rempty } -clock rclk
+1
+set_output_delay -0.5 { wfull } -clock wclk
+1
+# This port does not seem to need to be constrained with the way the library works.
+# I constrained anyway and did to multiple clocks.
+# I understand you probably wouldn't know that part.
+set_input_delay 0.0 rrst_n -clock rclk
+1
+set_input_delay 0.0 rrst_n -clock wclk -add_delay
+1
+set_input_delay 0.0 rrst_n -clock wclk2x -add_delay
+1
+# I like set_driving_cell to a std cell from the library.  set_drive works to.
+#set_driving_cell -lib_cell INVX1_HVT [all_inputs]
+set_drive 0.00001 [all_inputs ]
+1
+# Make a guess for now.  A real value would normally be given.
+set_load 0.5 [all_outputs]
+1
+#group_path -name INTERNAL -from [all_clocks] -to [all_clocks ]
+group_path -name INPUTS -from [ get_ports -filter "direction==in&&full_name!~*clk*" ]
+1
+group_path -name OUTPUTS -to [ get_ports -filter "direction==out" ]
+1
+Warning: Converting clock object 'wclk' from ideal to propagated. (UITE-315)
+Warning: Converting clock object 'rclk' from ideal to propagated. (UITE-315)
+Warning: Converting clock object 'wclk2x' from ideal to propagated. (UITE-315)
+Warning: Setting this variable to a lower value can cause a significant performance degradation during a timing update. (PTE-067)
+Information: Setting rc_cache_min_max_rise_fall_ceff to TRUE. (XTALK-015)
+Information: Using automatic max wire load selection group 'predcaps'. (ENV-003)
+Information: Using automatic min wire load selection group 'predcaps'. (ENV-003)
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) wptr_full/ZBUF_9_inst_1843/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) wptr_full/ZBUF_9_inst_1843/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/IBUFFX32_LVT) U24/A-->Y (min rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/IBUFFX32_LVT) U24/A-->Y (max rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/IBUFFX32_LVT) ctmTdsLR_1_341/A-->Y (min rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/IBUFFX32_LVT) ctmTdsLR_1_341/A-->Y (max rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX16_LVT) fifomem/U36/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX16_LVT) fifomem/U36/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U46/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U58/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U58/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U46/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32hvt_ff0p95vn40c/NBUFFX32_HVT) fifomem/HFSBUF_207_4/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32hvt_ff0p95vn40c/NBUFFX32_HVT) fifomem/HFSBUF_207_4/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U34/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U34/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U32/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U32/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U59/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) fifomem/U59/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32hvt_ff0p95vn40c/NBUFFX32_HVT) U20/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32hvt_ff0p95vn40c/NBUFFX32_HVT) U20/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/INVX32_LVT) HFSINV_1013_20/A-->Y (min rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/INVX32_LVT) HFSINV_1013_20/A-->Y (max rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) U31/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/NBUFFX32_LVT) U31/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32rvt_ff0p95vn40c/IBUFFX32_RVT) fifomem/ZINV_35_inst_115/A-->Y (min rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32rvt_ff0p95vn40c/IBUFFX32_RVT) fifomem/ZINV_35_inst_115/A-->Y (max rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/INVX32_LVT) ZINV_85_inst_421/A-->Y (min rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32rvt_ff0p95vn40c/NBUFFX32_RVT) U18/A-->Y (min rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32rvt_ff0p95vn40c/NBUFFX32_RVT) U18/A-->Y (max rising & falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/INVX16_LVT) ZINV_39_f_inst_423/A-->Y (min rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/INVX16_LVT) ZINV_22_inst_2144/A-->Y (min rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/INVX16_LVT) ZINV_22_inst_2144/A-->Y (max rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Warning: The drive-resistance for the timing arc (saed32lvt_ff0p95vn40c/INVX16_LVT) ZINV_22_inst_94/A-->Y (min rising & falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+Information: Starting crosstalk aware timing iteration 1. (XTALK-001)
+Information: Starting crosstalk aware timing iteration 2. (XTALK-001)
+Information: Expanding clock 'wclk2x' to base period of 71.980 (old period was 0.590, added 242 edges). (PTE-016)
+Information: Expanding clock 'wclk' to base period of 71.980 (old period was 1.180, added 120 edges). (PTE-016)
+Information: Expanding clock 'rclk' to base period of 71.980 (old period was 1.220, added 116 edges). (PTE-016)
+Information: Number of nets evaluated in the previous iteration: 737. (XTALK-105)
+pt_shell> exit
+Maximum memory usage for this session: 934.17 MB
+CPU usage for this session: 8 seconds 
+Elapsed time for this session: 26 seconds
+Diagnostics summary: 1 error, 41 warnings, 25 informationals
+
+Thank you for using pt_shell!
+

@@ -1,0 +1,12 @@
+#@ # 
+#@ # Running icc2_shell Version Q-2019.12-SP4 for linux64 -- May 26, 2020
+#@ # Date:   Sat Apr  8 18:08:32 2023
+#@ # Run by: reethika@auto.ece.pdx.edu
+#@ 
+
+fs
+fs
+cd ../../apr/work
+pwd
+fs
+exit

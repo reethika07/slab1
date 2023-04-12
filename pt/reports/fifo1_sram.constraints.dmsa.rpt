@@ -1,0 +1,254 @@
+
+Start of Master/Slave Task Processing
+-------------------------------------
+Started    : Command execution in scenario 'test_slowfast'
+Information: Checked out license 'PrimeTime' (PT-019)
+Information: Checked out license 'PrimeTime' (PT-019)
+Information: Checked out license 'PrimeTime' (PT-019)
+Started    : Command execution in scenario 'test_fastslow'
+Information: Checked out license 'PrimeTime' (PT-019)
+Started    : Command execution in scenario 'func_min'
+Information: Checked out license 'PrimeTime' (PT-019)
+Started    : Command execution in scenario 'test_best'
+Started    : Command execution in scenario 'test_worst'
+Started    : Command execution in scenario 'func_slowfast'
+Information: Checked out license 'PrimeTime' (PT-019)
+Information: Checked out license 'PrimeTime' (PT-019)
+Started    : Command execution in scenario 'func_fastslow'
+Sourcing   : Scenario specific data files to setup scenario 'test_slowfast'
+Started    : Command execution in scenario 'func_max'
+Sourcing   : Scenario specific data files to setup scenario 'test_fastslow'
+Sourcing   : Scenario specific data files to setup scenario 'func_min'
+Sourcing   : Scenario specific data files to setup scenario 'test_worst'
+Sourcing   : Scenario specific data files to setup scenario 'func_slowfast'
+Sourcing   : Scenario specific data files to setup scenario 'test_best'
+Sourcing   : Scenario specific data files to setup scenario 'func_fastslow'
+Sourcing   : Scenario specific data files to setup scenario 'func_max'
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimePower' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimePower' (PT-019)
+Information: Checked out license 'PrimePower' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimePower' (PT-019)
+Information: Checked out license 'PrimePower' (PT-019)
+Information: Checked out license 'PrimePower' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimePower' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimePower' (PT-019)
+Succeeded  : Command execution in scenario 'func_slowfast'
+Succeeded  : Command execution in scenario 'test_slowfast'
+Succeeded  : Command execution in scenario 'func_max'
+Succeeded  : Command execution in scenario 'test_worst'
+Succeeded  : Command execution in scenario 'func_min'
+Succeeded  : Command execution in scenario 'func_fastslow'
+Succeeded  : Command execution in scenario 'test_fastslow'
+Succeeded  : Command execution in scenario 'test_best'
+-----------------------------------
+End of Master/Slave Task Processing
+
+****************************************
+Report : constraint
+	-all_violators
+	-path slack_only
+Design : multi_scenario design
+Version: O-2018.06
+Date   : Fri Apr  7 20:21:06 2023
+****************************************
+
+Scenarios: func_max func_min test_best test_worst func_slowfast func_fastslow test_slowfast test_fastslow 
+
+
+   max_delay/setup ('OUTPUTS' group)
+
+   Endpoint                 Scenario                                   Slack
+   ---------------------------------------------------------------------------
+   rdata[6]                 func_max                                   -1.33  (VIOLATED)
+   rdata[7]                 func_max                                   -1.20  (VIOLATED)
+   rdata[2]                 func_max                                   -1.10  (VIOLATED)
+   rdata[4]                 func_max                                   -1.06  (VIOLATED)
+   rdata[5]                 func_max                                   -1.05  (VIOLATED)
+   rdata[0]                 func_max                                   -1.05  (VIOLATED)
+   rdata[3]                 func_max                                   -0.98  (VIOLATED)
+   rdata[1]                 func_max                                   -0.96  (VIOLATED)
+   rempty                   func_max                                   -0.70  (VIOLATED)
+   wfull                    func_max                                   -0.64  (VIOLATED)
+
+   max_delay/setup ('rclk' group)
+
+   Endpoint                 Scenario                                   Slack
+   ---------------------------------------------------------------------------
+   rptr_empty/rempty_reg/D  func_max                                   -0.25  (VIOLATED)
+
+   max_delay/setup ('wclk' group)
+
+   Endpoint                 Scenario                                   Slack
+   ---------------------------------------------------------------------------
+   wptr_full/wfull_reg/D    func_max                                   -0.33  (VIOLATED)
+   wptr_full/wptr_reg_9_/D  func_max                                   -0.05  (VIOLATED)
+   wptr_full/wbin_reg_10_/D func_max                                   -0.02  (VIOLATED)
+   wptr_full/wptr_reg_5_/D  func_max                                   -0.02  (VIOLATED)
+   wptr_full/wptr_reg_7_/D  func_max                                   -0.01  (VIOLATED)
+   wptr_full/wptr_reg_4_/D  func_max                                   -0.01  (VIOLATED)
+   wptr_full/wptr_reg_2_/D  func_max                                   -0.01  (VIOLATED)
+   wptr_full/wptr_reg_8_/D  func_max                                   -0.01  (VIOLATED)
+
+
+   min_delay/hold ('INPUTS' group)
+
+   Endpoint                 Scenario                                   Slack
+   ---------------------------------------------------------------------------
+   sync_w2r/rq1_wptr_reg_7_/RSTB func_fastslow                         -0.13  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_1_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_0_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_6_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_5_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_4_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_3_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_9_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_8_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_10_/RSTB func_fastslow                        -0.11  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_4_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_5_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_7_/RSTB func_fastslow                         -0.11  (VIOLATED)
+   sync_w2r/rq1_wptr_reg_2_/RSTB func_fastslow                         -0.10  (VIOLATED)
+   rptr_empty/rptr_reg_5_/RSTB func_fastslow                           -0.09  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_6_/RSTB func_fastslow                         -0.09  (VIOLATED)
+   rptr_empty/rptr_reg_6_/RSTB func_fastslow                           -0.09  (VIOLATED)
+   rptr_empty/rptr_reg_4_/RSTB func_fastslow                           -0.09  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_10_/RSTB func_fastslow                        -0.09  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_8_/RSTB func_fastslow                         -0.09  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_9_/RSTB func_fastslow                         -0.09  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_3_/RSTB func_fastslow                         -0.09  (VIOLATED)
+   rptr_empty/rptr_reg_1_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_0_/RSTB func_fastslow                         -0.08  (VIOLATED)
+   rptr_empty/rptr_reg_0_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rptr_reg_2_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_2_/RSTB func_fastslow                         -0.08  (VIOLATED)
+   rptr_empty/rptr_reg_8_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rbin_reg_7_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rptr_reg_3_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rbin_reg_10_/RSTB func_fastslow                          -0.08  (VIOLATED)
+   rptr_empty/rptr_reg_9_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rbin_reg_9_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rbin_reg_5_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rptr_reg_7_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   sync_w2r/rq2_wptr_reg_1_/RSTB func_fastslow                         -0.08  (VIOLATED)
+   rptr_empty/rbin_reg_6_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rbin_reg_4_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rbin_reg_3_/RSTB func_fastslow                           -0.08  (VIOLATED)
+   rptr_empty/rbin_reg_0_/RSTB func_fastslow                           -0.07  (VIOLATED)
+   rptr_empty/rbin_reg_1_/SETB func_fastslow                           -0.05  (VIOLATED)
+   rptr_empty/rbin_reg_8_/SETB func_fastslow                           -0.05  (VIOLATED)
+   rptr_empty/rempty_reg/SETB func_fastslow                            -0.05  (VIOLATED)
+   rptr_empty/rbin_reg_2_/SETB func_fastslow                           -0.05  (VIOLATED)
+   wdata_reg_2_/D           func_fastslow                              -0.01  (VIOLATED)
+   wdata_reg_3_/D           func_fastslow                              -0.01  (VIOLATED)
+   wdata_reg_1_/D           func_fastslow                              -0.01  (VIOLATED)
+   wdata_reg_4_/D           func_fastslow                              -0.01  (VIOLATED)
+   wdata_reg_0_/D           func_fastslow                              -0.01  (VIOLATED)
+   wdata_reg_5_/D           func_fastslow                              -0.01  (VIOLATED)
+   wdata_reg_6_/D           func_fastslow                              -0.01  (VIOLATED)
+   wdata_reg_7_/D           func_fastslow                              -0.01  (VIOLATED)
+
+   min_delay/hold ('wclk' group)
+
+   Endpoint                 Scenario                                   Slack
+   ---------------------------------------------------------------------------
+   fifomem/genblk1_7__U/I1[7] func_fastslow                            -0.01  (VIOLATED)
+   fifomem/genblk1_6__U/I1[7] func_fastslow                             0.00  (VIOLATED: increase significant digits)
+   fifomem/genblk1_6__U/I1[2] func_fastslow                             0.00  (VIOLATED: increase significant digits)
+   fifomem/genblk1_6__U/I1[4] func_fastslow                             0.00  (VIOLATED: increase significant digits)
+   fifomem/genblk1_6__U/I1[1] func_fastslow                             0.00  (VIOLATED: increase significant digits)
+
+
+   max_capacitance
+
+                                           Required       Actual
+   Pin                      Scenario       Capacitance    Capacitance    Slack
+   ---------------------------------------------------------------------------
+   fifomem/genblk1_3__U/O2[6] func_fastslow    25.00         39.00    -14.00  (VIOLATED)
+   fifomem/genblk1_3__U/O2[7] func_fastslow    25.00         36.66    -11.66  (VIOLATED)
+   fifomem/genblk1_7__U/O2[2] func_fastslow    25.00         33.05     -8.05  (VIOLATED)
+   fifomem/genblk1_7__U/O2[7] func_fastslow    25.00         32.39     -7.39  (VIOLATED)
+   fifomem/genblk1_2__U/O2[7] func_fastslow    25.00         31.18     -6.18  (VIOLATED)
+   fifomem/genblk1_7__U/O2[5] func_fastslow    25.00         28.69     -3.69  (VIOLATED)
+   fifomem/genblk1_3__U/O2[5] func_fastslow    25.00         25.65     -0.65  (VIOLATED)
+
+
+   min_capacitance
+
+                                           Required       Actual
+   Pin                      Scenario       Capacitance    Capacitance    Slack
+   ---------------------------------------------------------------------------
+   fifomem/genblk1_0__U/O1[0] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_0__U/O1[1] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_0__U/O1[2] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_0__U/O1[3] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_0__U/O1[4] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_0__U/O1[5] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_0__U/O1[6] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_0__U/O1[7] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_1__U/O1[0] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_1__U/O1[1] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_1__U/O1[2] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_1__U/O1[3] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_1__U/O1[4] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_1__U/O1[5] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_1__U/O1[6] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_1__U/O1[7] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_2__U/O1[0] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_2__U/O1[1] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_2__U/O1[2] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_2__U/O1[3] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_2__U/O1[4] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_2__U/O1[5] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_2__U/O1[6] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_2__U/O1[7] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_3__U/O1[0] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_3__U/O1[1] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_3__U/O1[2] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_3__U/O1[3] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_3__U/O1[4] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_3__U/O1[5] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_3__U/O1[6] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_3__U/O1[7] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_4__U/O1[0] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_4__U/O1[1] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_4__U/O1[2] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_4__U/O1[3] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_4__U/O1[4] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_4__U/O1[5] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_4__U/O1[6] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_4__U/O1[7] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_5__U/O1[0] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_5__U/O1[1] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_5__U/O1[2] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_5__U/O1[3] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_5__U/O1[4] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_5__U/O1[5] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_5__U/O1[6] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_5__U/O1[7] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_6__U/O1[0] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_6__U/O1[1] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_6__U/O1[2] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_6__U/O1[3] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_6__U/O1[4] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_6__U/O1[5] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_6__U/O1[6] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_6__U/O1[7] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_7__U/O1[0] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_7__U/O1[1] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_7__U/O1[2] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_7__U/O1[3] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_7__U/O1[4] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_7__U/O1[5] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_7__U/O1[6] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+   fifomem/genblk1_7__U/O1[7] func_fastslow     0.10          0.01     -0.09  (VIOLATED)
+
+
+1

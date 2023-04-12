@@ -1,0 +1,59 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -group rclk
+        -max_paths 1
+Design : fifo1_sram
+Version: Q-2019.12-SP3
+Date   : Sat Apr  8 18:05:53 2023
+****************************************
+
+Operating Conditions: ss0p75v125c   Library: saed32hvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: rptr_empty/rbin_reg_5_
+              (rising edge-triggered flip-flop clocked by rclk)
+  Endpoint: rptr_empty/rempty_reg
+            (rising edge-triggered flip-flop clocked by rclk)
+  Path Group: rclk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo1_sram         540000                saed32hvt_ss0p75v125c
+  rptr_empty_ADDRSIZE10
+                     8000                  saed32hvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock rclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.10       0.10
+  rptr_empty/rbin_reg_5_/CLK (SDFFARX1_LVT)               0.00       0.10 r
+  rptr_empty/rbin_reg_5_/Q (SDFFARX1_LVT)                 0.31       0.41 r
+  rptr_empty/U34/Y (AND3X1_LVT)                           0.09       0.50 r
+  rptr_empty/U5/Y (NAND4X0_LVT)                           0.06       0.57 f
+  rptr_empty/U19/Y (INVX1_LVT)                            0.05       0.61 r
+  rptr_empty/U4/Y (OA21X1_LVT)                            0.09       0.70 r
+  rptr_empty/U3/Y (MUX21X2_LVT)                           0.11       0.81 r
+  rptr_empty/U11/Y (XNOR2X2_LVT)                          0.11       0.91 r
+  rptr_empty/U15/Y (NAND4X0_LVT)                          0.06       0.97 f
+  rptr_empty/U10/Y (NOR4X0_LVT)                           0.15       1.12 r
+  rptr_empty/rempty_reg/D (SDFFASX1_LVT)                  0.00       1.12 r
+  data arrival time                                                  1.12
+
+  clock rclk (rise edge)                                  1.22       1.22
+  clock network delay (ideal)                             0.10       1.32
+  clock uncertainty                                      -0.07       1.25
+  rptr_empty/rempty_reg/CLK (SDFFASX1_LVT)                0.00       1.25 r
+  library setup time                                     -0.15       1.10
+  data required time                                                 1.10
+  --------------------------------------------------------------------------
+  data required time                                                 1.10
+  data arrival time                                                 -1.12
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.02
+
+
+1

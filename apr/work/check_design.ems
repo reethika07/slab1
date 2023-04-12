@@ -1,0 +1,92 @@
+<Database>
+Name/home/reethika/common/Documents/lab1-reethika07-master/apr/work/check_design.ems
+Creation TimeSat Apr  8 19:44:08 2023
+Modified TimeSat Apr  8 19:44:08 2023
+Design Namefifo1_sram
+Library Namefifo1_sram_lib
+</Database>
+<RuleCount>
+DFT-0111
+TCK-00174
+TCK-0121
+</RuleCount>
+<UserDefinedRules>
+</UserDefinedRules>
+<Messages>
+DFT-011reason10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_8_/D1[ get_pin { sync_r2w/wq1_rptr_reg_8_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_8_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_8_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_7_/D1[ get_pin { sync_r2w/wq1_rptr_reg_7_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_7_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_7_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_0_/D1[ get_pin { sync_r2w/wq1_rptr_reg_0_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_0_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_0_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_3_/D1[ get_pin { sync_r2w/wq1_rptr_reg_3_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_3_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_3_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_10_/D1[ get_pin { sync_r2w/wq1_rptr_reg_10_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_10_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_10_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_10_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_10_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_9_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_9_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_6_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_6_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_4_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_4_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_7_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_7_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_0_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_0_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_8_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_8_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_3_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_3_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_5_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_5_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_2_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_2_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq2_rptr_reg_1_/RSTB1[ get_pin { sync_r2w/wq2_rptr_reg_1_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_1_/D1[ get_pin { sync_r2w/wq1_rptr_reg_1_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_1_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_1_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_2_/D1[ get_pin { sync_r2w/wq1_rptr_reg_2_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_2_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_2_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_9_/D1[ get_pin { sync_r2w/wq1_rptr_reg_9_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_9_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_9_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_5_/D1[ get_pin { sync_r2w/wq1_rptr_reg_5_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_5_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_5_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_6_/D1[ get_pin { sync_r2w/wq1_rptr_reg_6_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_6_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_6_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_4_/D1[ get_pin { sync_r2w/wq1_rptr_reg_4_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_r2w/wq1_rptr_reg_4_/RSTB1[ get_pin { sync_r2w/wq1_rptr_reg_4_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_10_/D1[ get_pin { sync_w2r/rq1_wptr_reg_10_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_6_/D1[ get_pin { sync_w2r/rq1_wptr_reg_6_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_5_/D1[ get_pin { sync_w2r/rq1_wptr_reg_5_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_4_/D1[ get_pin { sync_w2r/rq1_wptr_reg_4_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_3_/D1[ get_pin { sync_w2r/rq1_wptr_reg_3_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_0_/D1[ get_pin { sync_w2r/rq1_wptr_reg_0_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_7_/D1[ get_pin { sync_w2r/rq1_wptr_reg_7_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_1_/D1[ get_pin { sync_w2r/rq1_wptr_reg_1_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_8_/D1[ get_pin { sync_w2r/rq1_wptr_reg_8_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_2_/D1[ get_pin { sync_w2r/rq1_wptr_reg_2_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointsync_w2r/rq1_wptr_reg_9_/D1[ get_pin { sync_w2r/rq1_wptr_reg_9_/D } ]6modefunc1[ get_modes { func } ]39reasonfalse path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_4_/RSTB1[ get_pin { wptr_full/wbin_reg_4_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_4_/RSTB1[ get_pin { wptr_full/wptr_reg_4_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_5_/RSTB1[ get_pin { wptr_full/wptr_reg_5_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_2_/SETB1[ get_pin { wptr_full/wbin_reg_2_/SETB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_1_/RSTB1[ get_pin { wptr_full/wbin_reg_1_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_6_/RSTB1[ get_pin { wptr_full/wbin_reg_6_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_7_/RSTB1[ get_pin { wptr_full/wbin_reg_7_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_8_/RSTB1[ get_pin { wptr_full/wbin_reg_8_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_9_/RSTB1[ get_pin { wptr_full/wbin_reg_9_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wfull_reg/RSTB1[ get_pin { wptr_full/wfull_reg/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_0_/RSTB1[ get_pin { wptr_full/wbin_reg_0_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_10_/RSTB1[ get_pin { wptr_full/wbin_reg_10_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_5_/RSTB1[ get_pin { wptr_full/wbin_reg_5_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wbin_reg_3_/RSTB1[ get_pin { wptr_full/wbin_reg_3_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_7_/RSTB1[ get_pin { wptr_full/wptr_reg_7_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_1_/RSTB1[ get_pin { wptr_full/wptr_reg_1_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_9_/RSTB1[ get_pin { wptr_full/wptr_reg_9_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_8_/RSTB1[ get_pin { wptr_full/wptr_reg_8_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_6_/RSTB1[ get_pin { wptr_full/wptr_reg_6_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_3_/RSTB1[ get_pin { wptr_full/wptr_reg_3_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_2_/RSTB1[ get_pin { wptr_full/wptr_reg_2_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwptr_full/wptr_reg_0_/RSTB1[ get_pin { wptr_full/wptr_reg_0_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwdata_reg_1_/RSTB1[ get_pin { wdata_reg_1_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwdata_reg_7_/SETB1[ get_pin { wdata_reg_7_/SETB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwdata_reg_0_/RSTB1[ get_pin { wdata_reg_0_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwdata_reg_3_/RSTB1[ get_pin { wdata_reg_3_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwdata_reg_4_/RSTB1[ get_pin { wdata_reg_4_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwdata_reg_2_/RSTB1[ get_pin { wdata_reg_2_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwdata_reg_6_/RSTB1[ get_pin { wdata_reg_6_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-001cornerslow1[ get_corners { slow } ]40endpointwdata_reg_5_/RSTB1[ get_pin { wdata_reg_5_/RSTB } ]6modefunc1[ get_modes { func } ]39reasonno arrival path10
+TCK-012cornerslow1[ get_corners { slow } ]40modefunc1[ get_modes { func } ]39portwrst_n1[ get_port { wrst_n } ]7
+</Messages>
